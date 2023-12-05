@@ -156,3 +156,7 @@ export PATH="/home/joe/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 
 # Rye
 export PATH="$PATH:$HOME/.rye/shims"
+
+if [ -f ~/.bash_no_git ]; then
+    . ~/.bash_no_git
+fi
