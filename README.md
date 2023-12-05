@@ -8,7 +8,8 @@ I also have [my own repo for my ~/.emacs.d dir](https://github.com/nixjdm/emacs.
 
 ```shell
 cd
-git clone https://github.com/nixjdm/homedir.git
+# swap with https clone if you like
+git clone git@github.com:nixjdm/homedir.git
 mv homedir/.[Xa-z]* homedir/* .
 rmdir homedir
 ```
