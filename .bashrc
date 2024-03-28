@@ -139,15 +139,8 @@ export VISUAL=emacs
 export EDITOR="$VISUAL -nw"
 export PYTHONBREAKPOINT=ipdb.set_trace
 
-export VAGRANT_EXE="/home/joe/wrkspc/vagrant/exec/vagrant"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export LEKTOR_DEV=1
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
 source /home/joe/.rvm/scripts/rvm
 
 # Mojo
@@ -156,7 +149,18 @@ export PATH="/home/joe/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 
 # Rye
 export PATH="$PATH:$HOME/.rye/shims"
+eval "$(rye self completion -s bash)"
 
+# Misc
+eval "$(poetry completions bash)"
+eval "$(direnv hook bash)"
+export VAGRANT_EXE="/home/joe/wrkspc/vagrant/exec/vagrant"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export LEKTOR_DEV=1
+
+# untracked bash
 if [ -f ~/.bash_no_git ]; then
     . ~/.bash_no_git
 fi
